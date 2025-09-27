@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerSpeed = 1;
     }
 
-    void Update()
+    public void UpdateMovement()
     {
 
         float x = Input.GetAxisRaw("Horizontal");

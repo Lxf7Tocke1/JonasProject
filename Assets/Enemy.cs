@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         PlayerPosition = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
-    void Update()
+    public void UpdateEnemy()
     {
         EnemyToPlayer = (PlayerPosition.position - transform.position).normalized * Time.deltaTime * Speed;
         transform.position += EnemyToPlayer;
