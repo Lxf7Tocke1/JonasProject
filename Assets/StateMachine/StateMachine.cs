@@ -17,6 +17,7 @@ public class StateMachine : MonoBehaviour
                 CurrentState?.ExitState();
                 CurrentState = s;
                 CurrentState.EnterState();
+                Debug.Log("switch state to" + CurrentState.ToString());
                 return;
             }
         }
@@ -27,10 +28,4 @@ public class StateMachine : MonoBehaviour
     {
         CurrentState?.UpdateState();
     }
-    public bool IsState<aState>()
-    {
-        if (!CurrentState) return false;
-        return CurrentState.GetType() == typeof(aState);
-    }
-
 }

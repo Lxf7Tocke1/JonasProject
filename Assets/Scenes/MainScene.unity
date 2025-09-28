@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd369d67075a1440ac24f52e9567e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamesManager
-  states: []
-  CurrentState: {fileID: 0}
+  enemy: {fileID: 565281824}
+  movement: {fileID: 2137981593}
 --- !u!1 &2137981592
 GameObject:
   m_ObjectHideFlags: 0
