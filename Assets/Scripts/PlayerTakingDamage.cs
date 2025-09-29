@@ -4,12 +4,11 @@ using UnityEngine.SceneManagement;
 public class PlayerTakingDamage : MonoBehaviour
 {
 
-    [SerializeField] float Health;
-    [SerializeField] float MaxHealth;
+    [SerializeField] protected float Health;
+    [SerializeField] protected float MaxHealth;
     void Start()
     {
-        MaxHealth = 100f;
-        Health = MaxHealth;
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

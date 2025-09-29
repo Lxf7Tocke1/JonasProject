@@ -2,19 +2,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : PlayerTakingDamage
 {
- //   [SerializeField] Image healthBar;
- //   [SerializeField] TextMeshProUGUI healthText;
+
+    [SerializeField] Image healthBar;
+    [SerializeField] TextMeshProUGUI healthText;
     void Start()
     {
-        
+        MaxHealth = 100f;
+        Health = MaxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-  //      healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
-   //     healthBar.fillAmount = Health / MaxHealth;
+        healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
+        healthBar.fillAmount = Health / MaxHealth;
     }
 }

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-
     public List<State> states = new List<State>();
     public State CurrentState = null;
-
+    
     public void SwitchState<aState>()
     {
         foreach (State s in states)

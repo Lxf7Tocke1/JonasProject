@@ -19,7 +19,6 @@ public class GamesManager : StateMachine
     {
         SwitchState<PlayingState>();
     }
-
     private void Update()
     {
         UpdateStateMachine();
