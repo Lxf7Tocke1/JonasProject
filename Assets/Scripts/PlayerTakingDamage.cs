@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerTakingDamage : MonoBehaviour
 {
@@ -15,15 +16,12 @@ public class PlayerTakingDamage : MonoBehaviour
         TakingDamage();
     }
 
-    public void TakingDamage()
+    public void TakingDamage(float someDamage = 1.0f)
     {
         if (FindAnyObjectByType<Enemy>())
         {
-            Health = Health - 10;
-            if (Health <= 0)
-            {
-                Death();
-            }
+            Health -= someDamage;
+            if (Alive == false) Death();
         }
     }
 
