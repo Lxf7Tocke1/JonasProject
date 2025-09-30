@@ -13,7 +13,7 @@ public class Enemy : Damageable
     {
         Health = MaxHealth;
         MovementSpeed = 1f;
-        PlayerPosition = FindAnyObjectByType<PlayerMovement>().transform;
+        PlayerPosition = FindAnyObjectByType<Player>().transform;
     }
     public void Initialized(Transform aTarget)
     {

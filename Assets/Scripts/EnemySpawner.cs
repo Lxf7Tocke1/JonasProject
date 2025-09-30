@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class EnemyManager : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] Transform enemy_Target;
     [SerializeField] float enemy_SpawnRadius;
@@ -14,7 +14,7 @@ public class EnemyManager : MonoBehaviour
 
     float current_EnemySpawn;
 
-    public void Update()
+    public void UpdateEnemySpawner()
     {
         for (int i = 0; i < spawnedEnemies.Count; i++)
         {

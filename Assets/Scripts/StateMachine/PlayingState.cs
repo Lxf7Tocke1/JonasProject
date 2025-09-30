@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class PlayingState : State
 {
-     PlayerMovement playerMovement;
-     Enemy enemy;
-public PlayingState(PlayerMovement playerMovement, Enemy enemy)
+     Player player;
+    EnemySpawner enemyspawner;
+public PlayingState(Player player, EnemySpawner enemySpawner)
     {
-        this.playerMovement = playerMovement;
-        this.enemy = enemy;
+        this.player = player;
+        this.enemyspawner = enemySpawner;
     }
     public override void UpdateState()
     {
         base.UpdateState();
 
-        playerMovement.UpdateMovement();
-        enemy.UpdateEnemy();
+        player.UpdatePlayer();
+        enemyspawner.UpdateEnemySpawner();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
