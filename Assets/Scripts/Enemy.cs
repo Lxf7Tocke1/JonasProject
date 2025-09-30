@@ -1,25 +1,27 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Damageable
 {
-    [SerializeField] float Speed;
-    [SerializeField] float Health;
-    [SerializeField] float MaxHealth = 10f;
-
+    private Transform target;
 
     Transform PlayerPosition;
     Vector3 EnemyToPlayer;
+    [SerializeField] float MovementSpeed;
     void Start()
     {
         Health = MaxHealth;
-        Speed = 1f;
+        MovementSpeed = 1f;
         PlayerPosition = FindAnyObjectByType<PlayerMovement>().transform;
     }
-
+    public void Initialized(Transform aTarget)
+    {
+        target = aTarget;
+    }
     public void UpdateEnemy()
     {
-        EnemyToPlayer = (PlayerPosition.position - transform.position).normalized * Time.deltaTime * Speed;
+        EnemyToPlayer = (PlayerPosition.position - transform.position).normalized * Time.deltaTime * MovementSpeed;
         transform.position += EnemyToPlayer;
 
     }

@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class PlayerTakingDamage : MonoBehaviour
+public class Damageable : MonoBehaviour
 {
-
     [SerializeField] protected float Health;
     [SerializeField] protected float MaxHealth;
+    public bool Alive => Health > 0;
     void Start()
     {
 

@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : PlayerTakingDamage
+public class Player : Damageable
 {
 
     [SerializeField] Image healthBar;
