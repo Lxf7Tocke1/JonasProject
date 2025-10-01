@@ -27,7 +27,7 @@ public class Damageable : MonoBehaviour
 
     public void Death()
     {
-  //      SceneManager.LoadScene("MainMenu");
+
     }
 
 }

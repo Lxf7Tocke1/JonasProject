@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 69889452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.78, y: -3.22, z: 0}
+  m_LocalPosition: {x: 16, y: 25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -507,7 +507,7 @@ Transform:
   m_GameObject: {fileID: 737827319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.60499, y: 3.21783, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10099,7 +10099,7 @@ Transform:
   m_GameObject: {fileID: 1940727626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.35721, y: 0.25429, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10338,6 +10338,11 @@ MonoBehaviour:
   healthBar: {fileID: 1052585539}
   healthText: {fileID: 1592661410}
   DeadFish_Prefab: {fileID: 7170599243071987582, guid: 8f1c30e57e878c547bcd3d60f22b3568, type: 3}
+  SpinningSword_Prefab: {fileID: 637100624703110780, guid: c6ebe3d8d04dffa4296153ab353450dc, type: 3}
+  spinningSword: {fileID: 6426094725190670849, guid: c6ebe3d8d04dffa4296153ab353450dc, type: 3}
+  Spin_Radius: 1
+  Spin_RotationSpeed: 200
+  Spin_OrbitSpeed: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

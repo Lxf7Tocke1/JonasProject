@@ -5,7 +5,7 @@ public class FishThrow : MonoBehaviour
     Vector3 velocity = new();
     public void Initialize(Vector3 aVelocity, float aSpeed)
     {
-        Destroy(gameObject, 5.0f);
+        Destroy(gameObject, 100.0f);
         transform.up = aVelocity;
         velocity = aVelocity * aSpeed;
     }
