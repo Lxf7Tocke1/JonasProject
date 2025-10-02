@@ -10,24 +10,19 @@ public class Player : Damageable
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthText;
 
+    [SerializeField] Image EXPBar;
+    [SerializeField] TextMeshProUGUI EXPText;
+
     [SerializeField] GameObject DeadFish_Prefab;
+    [SerializeField] private float Experience = 0f;
+    [SerializeField] private float MaxExperience = 100;
 
 
-// something is wrong
-    [SerializeField] GameObject SpinningSword_Prefab;
-    [SerializeField] Transform spinningSword;
-    [SerializeField] float Spin_Radius;
-    [SerializeField] float Spin_RotationSpeed;
-    [SerializeField] float Spin_OrbitSpeed;
-    private float currentAngle = 0f;
     void Start()
     {
         MaxHealth = 100f;
         Health = MaxHealth;
 
-       // messed up code
-        GameObject spinningweaponInstance = Instantiate(SpinningSword_Prefab, transform.position, Quaternion.identity);
-        spinningSword = spinningweaponInstance.transform;
     }
     public void UpdatePlayer()
     {
@@ -42,11 +37,12 @@ public class Player : Damageable
         healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
         healthBar.fillAmount = Health / MaxHealth;
 
+        EXPText.text = Experience.ToString() + " / " + MaxExperience.ToString();
+        EXPBar.fillAmount = Experience / MaxExperience;
 
 
         Shooting();
-        SpinBlade();
-        currentAngle += Spin_OrbitSpeed * Time.deltaTime;
+
     }
 
     private void Shooting()
@@ -63,12 +59,5 @@ public class Player : Damageable
         }
 
     }
-    private void SpinBlade()
-    {
-        // messed up code
-        Vector3 orbitPositon = new Vector3(Mathf.Cos(Spin_OrbitSpeed), Mathf.Sin(Spin_OrbitSpeed), 0) * Spin_Radius;
 
-        spinningSword.position = transform.position + orbitPositon;
-        spinningSword.Rotate(Vector3.forward * Spin_RotationSpeed * Time.deltaTime);
-    }
 }
