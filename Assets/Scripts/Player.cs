@@ -11,16 +11,25 @@ public class Player : Damageable
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthText;
 
+    [SerializeField] Image EXPBar;
+    [SerializeField] TextMeshProUGUI EXPText;
+
     [SerializeField] GameObject DeadFish_Prefab;
+    [SerializeField] private float Experience = 0f;
+    [SerializeField] private float MaxExperience = 100;
 
 
     void Start()
     {
         MaxHealth = 100f;
         Health = MaxHealth;
+<<<<<<< HEAD
         CurrentExp = 0;
         PlayerLevel = 1;
         LevelUpEXP = 10;
+=======
+
+>>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
     }
 
     public void UpdatePlayer()
@@ -36,9 +45,12 @@ public class Player : Damageable
         healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
         healthBar.fillAmount = Health / MaxHealth;
 
+        EXPText.text = Experience.ToString() + " / " + MaxExperience.ToString();
+        EXPBar.fillAmount = Experience / MaxExperience;
 
 
         Shooting();
+<<<<<<< HEAD
     }
 
     public void GainXP(float someAmount)
@@ -54,6 +66,9 @@ public class Player : Damageable
         PlayerLevel++;
         LevelUpEXP *= 1.1f;
         CurrentExp = 0;
+=======
+
+>>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
     }
 
     private void Shooting()
@@ -70,8 +85,12 @@ public class Player : Damageable
 
         }
     }
+<<<<<<< HEAD
     public override void Death()
     {
         SceneManager.LoadScene("MainScene");
     }
+=======
+
+>>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
 }
