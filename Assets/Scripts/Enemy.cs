@@ -6,23 +6,28 @@ public class Enemy : Damageable
 {
     private Transform target;
 
-    Transform PlayerPosition;
+   // [SerializeField] Transform PlayerPosition;
     Vector3 EnemyToPlayer;
     [SerializeField] float MovementSpeed;
     void Start()
     {
         Health = MaxHealth;
         MovementSpeed = 1f;
-        PlayerPosition = FindAnyObjectByType<Player>().transform;
+      //  PlayerPosition = FindAnyObjectByType<Player>().transform;
     }
     public void Initialized(Transform aTarget)
     {
         target = aTarget;
     }
-    public void UpdateEnemy()
+    public void UpdateEnemy(Vector3 target)
     {
-        EnemyToPlayer = (PlayerPosition.position - transform.position).normalized * Time.deltaTime * MovementSpeed;
+        EnemyToPlayer = (target - transform.position).normalized * Time.deltaTime * MovementSpeed;
         transform.position += EnemyToPlayer;
 
+    }
+    public override void Death()
+    {
+        FindAnyObjectByType<Player>().GainXP(5);
+        gameObject.SetActive(false);
     }
 }

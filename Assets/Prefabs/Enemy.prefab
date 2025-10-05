@@ -202,4 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   Health: 100
   MaxHealth: 100
+  CurrentExp: 0
+  LevelUpEXP: 0
+  PlayerLevel: 0
+  player: {fileID: 2094851020290091235, guid: a67518209789ce942ae1e2e28078f7f8, type: 3}
   MovementSpeed: 1

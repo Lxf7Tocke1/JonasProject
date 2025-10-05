@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : Damageable
@@ -13,22 +14,15 @@ public class Player : Damageable
     [SerializeField] GameObject DeadFish_Prefab;
 
 
-// something is wrong
-    [SerializeField] GameObject SpinningSword_Prefab;
-    [SerializeField] Transform spinningSword;
-    [SerializeField] float Spin_Radius;
-    [SerializeField] float Spin_RotationSpeed;
-    [SerializeField] float Spin_OrbitSpeed;
-    private float currentAngle = 0f;
     void Start()
     {
         MaxHealth = 100f;
         Health = MaxHealth;
-
-       // messed up code
-        GameObject spinningweaponInstance = Instantiate(SpinningSword_Prefab, transform.position, Quaternion.identity);
-        spinningSword = spinningweaponInstance.transform;
+        CurrentExp = 0;
+        PlayerLevel = 1;
+        LevelUpEXP = 10;
     }
+
     public void UpdatePlayer()
     {
 
@@ -45,8 +39,21 @@ public class Player : Damageable
 
 
         Shooting();
-        SpinBlade();
-        currentAngle += Spin_OrbitSpeed * Time.deltaTime;
+    }
+
+    public void GainXP(float someAmount)
+    {
+        CurrentExp += someAmount;
+        if ((LevelUpEXP / CurrentExp) <= 1)
+            PlayerLevelUp();
+    }
+    public void PlayerLevelUp()
+
+
+    {
+        PlayerLevel++;
+        LevelUpEXP *= 1.1f;
+        CurrentExp = 0;
     }
 
     private void Shooting()
@@ -60,15 +67,11 @@ public class Player : Damageable
 
             DeadFish.GetComponent<FishThrow>().Initialize(direction, 4);
 
+
         }
-
     }
-    private void SpinBlade()
+    public override void Death()
     {
-        // messed up code
-        Vector3 orbitPositon = new Vector3(Mathf.Cos(Spin_OrbitSpeed), Mathf.Sin(Spin_OrbitSpeed), 0) * Spin_Radius;
-
-        spinningSword.position = transform.position + orbitPositon;
-        spinningSword.Rotate(Vector3.forward * Spin_RotationSpeed * Time.deltaTime);
+        SceneManager.LoadScene("MainScene");
     }
 }

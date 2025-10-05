@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < spawnedEnemies.Count; i++)
         {
-            spawnedEnemies[i].UpdateEnemy();
+            spawnedEnemies[i].UpdateEnemy(enemy_Target.position);
         }
         for (int i = spawnedEnemies.Count - 1; i >= 0; i--)
         {

@@ -6,10 +6,16 @@ public class Damageable : MonoBehaviour
 {
     [SerializeField] protected float Health;
     [SerializeField] protected float MaxHealth;
+
+    public float CurrentExp;
+    public float LevelUpEXP;
+    public float PlayerLevel;
     public bool Alive => Health > 0;
+    // [SerializeField] protected Player player;
+    
     void Start()
     {
-
+       // player = FindAnyObjectByType<Player>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +31,8 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    public void Death()
+
+    public virtual void Death()
     {
 
     }
