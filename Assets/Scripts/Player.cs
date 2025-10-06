@@ -23,13 +23,9 @@ public class Player : Damageable
     {
         MaxHealth = 100f;
         Health = MaxHealth;
-<<<<<<< HEAD
         CurrentExp = 0;
         PlayerLevel = 1;
         LevelUpEXP = 10;
-=======
-
->>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
     }
 
     public void UpdatePlayer()
@@ -50,7 +46,6 @@ public class Player : Damageable
 
 
         Shooting();
-<<<<<<< HEAD
     }
 
     public void GainXP(float someAmount)
@@ -66,9 +61,6 @@ public class Player : Damageable
         PlayerLevel++;
         LevelUpEXP *= 1.1f;
         CurrentExp = 0;
-=======
-
->>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
     }
 
     private void Shooting()
@@ -85,12 +77,8 @@ public class Player : Damageable
 
         }
     }
-<<<<<<< HEAD
     public override void Death()
     {
         SceneManager.LoadScene("MainScene");
     }
-=======
-
->>>>>>> ad2f782717b3da34cdcb80c6274fabb2803e3d88
 }
