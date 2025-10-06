@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MainMenuState : Sstates
+public class MainMenuState : State
 {
     public override void EnterState()
     {
