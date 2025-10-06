@@ -10323,7 +10323,11 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   healthBar: {fileID: 1052585539}
   healthText: {fileID: 1592661410}
+  EXPBar: {fileID: 1395170166}
+  EXPText: {fileID: 1094427706}
   DeadFish_Prefab: {fileID: 7170599243071987582, guid: 8f1c30e57e878c547bcd3d60f22b3568, type: 3}
+  Experience: 0
+  MaxExperience: 100
 --- !u!81 &1315004030189551279
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10615,21 +10619,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8bdc381143f30544965ed8e83858fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
-  Health: 100
-  MaxHealth: 100
-  PlayerSpeed: 3
-  movement: {x: 0, y: 0, z: 0}
-  healthBar: {fileID: 1052585539}
-  healthText: {fileID: 1592661410}
-  EXPBar: {fileID: 1395170166}
-  EXPText: {fileID: 1094427706}
-  DeadFish_Prefab: {fileID: 7170599243071987582, guid: 8f1c30e57e878c547bcd3d60f22b3568, type: 3}
-  Experience: 35
-  MaxExperience: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
