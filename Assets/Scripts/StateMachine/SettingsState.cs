@@ -1,6 +1,5 @@
-using UnityEngine;
 
-public class SettingsState : Sstates
+public class SettingsState : State
 {
     public override void EnterState()
     {

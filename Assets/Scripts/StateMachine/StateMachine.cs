@@ -1,11 +1,10 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    public List<State> states = new List<State>();
-    public State CurrentState = null;
+    [SerializeField] private List<State> states;
+    [SerializeField] private State CurrentState;
     
     public void SwitchState<aState>()
     {

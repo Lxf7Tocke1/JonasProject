@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LevelSelectState : Sstates
+public class LevelSelectState : State
 {
     public override void EnterState()
     {
