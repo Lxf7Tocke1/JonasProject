@@ -12,4 +12,10 @@ public class LevelSelectState : State
         base.ExitState();
         gameObject.SetActive(false);
     }
+
+    public void OnBackButton()
+    {
+        // todo: apply logic and replace later
+        MenuManager.Instance.SwitchState<MainMenuState>();
+    }
 }

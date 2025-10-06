@@ -11,4 +11,9 @@ public class SettingsState : State
         base.ExitState();
         gameObject.SetActive(false);
     }
+
+    public void OnBackButton()
+    {
+        MenuManager.Instance.SwitchState<MainMenuState>();
+    }
 }
