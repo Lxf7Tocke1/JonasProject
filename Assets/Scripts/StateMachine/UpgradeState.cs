@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class UpgradeState : State
 {
-    [SerializeField] GameObject upgradeMenuUI;
+    [SerializeField] private UpgradeManager upgradeManager;
     public override void EnterState()
     {
         base.EnterState();
-        upgradeMenuUI.SetActive(true);
+        upgradeManager.ShowUpgradeMenu();
     }
     public override void ExitState()
     {
         base.ExitState();
-        upgradeMenuUI.SetActive(false);
+        upgradeManager.HideUpgradeMenu();
     }
 }

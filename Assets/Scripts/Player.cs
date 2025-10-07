@@ -20,11 +20,18 @@ public class Player : Damageable
 
     [SerializeField] GameObject autoProjectilePrefab;
 
+    [SerializeField] private float levelUpEnemyKillRequirement = 10;
+    [SerializeField] private float levelUpRequirementMultiplier = 1.1f;
+
     private float autoShootTimer;
+    private int enemiesKilled = 0;
+
+    public float deadFishDamage = 50.0f;
+    public float autoProjectileFireRate = 1f;
+
 
     void Start()
     {
-        MaxHealth = 100f;
         Health = MaxHealth;
         CurrentExp = 0;
         PlayerLevel = 1;
@@ -52,22 +59,21 @@ public class Player : Damageable
 
         AutoShooting();
     }
-
-    public void GainXP(float someAmount)
+    public void AddKill()
     {
-        CurrentExp += someAmount;
-        if ((LevelUpEXP / CurrentExp) <= 1)
+        enemiesKilled++;
+        if (enemiesKilled >= levelUpEnemyKillRequirement)
+        {
             PlayerLevelUp();
+        }
     }
     public void PlayerLevelUp()
-
-
     {
         PlayerLevel++;
-        LevelUpEXP *= 1.1f;
-        CurrentExp = 0;
+        levelUpEnemyKillRequirement *= levelUpRequirementMultiplier;
+        enemiesKilled = 0;
+        GamesManager.Instance.SwitchState<UpgradeState>();
     }
-
     private void Shooting()
     {
         if (Input.GetMouseButtonDown(0))
@@ -77,7 +83,7 @@ public class Player : Damageable
             mousePosition.z = 0;
             Vector3 direction = (mousePosition - transform.position).normalized;
 
-            DeadFish.GetComponent<FishThrow>().Initialize(direction, 4);
+            DeadFish.GetComponent<FishThrow>().Initialize(direction, 4, 25f);
 
 
         }
@@ -100,5 +106,20 @@ public class Player : Damageable
     public override void Death()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void UpgradePlayerSpeed()
+    {
+        PlayerSpeed *= 1.2f;
+    }
+
+    public void UpgradeDeadFishDamage()
+    {
+        deadFishDamage *= 1.25f;
+    }
+
+    public void UpgradeAutoProjectileFireRate()
+    {
+        autoProjectileFireRate *= 0.8f;
     }
 }
