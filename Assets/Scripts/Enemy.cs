@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : Damageable
 {
-    private Transform target;
+    private Transform playerTarget;
 
    // [SerializeField] Transform PlayerPosition;
     Vector3 EnemyToPlayer;
@@ -15,7 +15,7 @@ public class Enemy : Damageable
     }
     public void Initialized(Transform aTarget)
     {
-        target = aTarget;
+        playerTarget = aTarget;
     }
     public void UpdateEnemy(Vector3 target)
     {
