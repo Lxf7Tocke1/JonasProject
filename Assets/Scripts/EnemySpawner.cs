@@ -42,7 +42,10 @@ public class EnemySpawner : MonoBehaviour
         GameObject newEnemy = Instantiate(enemy_Prefabs[rand], randomPosition, Quaternion.identity);
 
         Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
-        newEnemyComponent.Initialized(enemy_Target);
-        spawnedEnemies.Add(newEnemyComponent);
+        if (newEnemyComponent != null)
+        {
+            newEnemyComponent.Initialized(enemy_Target);
+            spawnedEnemies.Add(newEnemyComponent);
+        }
     }
 }

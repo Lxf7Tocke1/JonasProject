@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5478135496998406266, guid: 5929399b7a8bc354281205e1b967e9b9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,10 +142,9 @@ MonoBehaviour:
   CurrentExp: 0
   LevelUpEXP: 0
   PlayerLevel: 0
-  playerTarget: {fileID: 1578659107721600172, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
   orbitSpeed: 2
-  followSpeed: 1
-  orbitDistance: 4
+  followSpeed: 2
+  orbitDistance: 0.2
 --- !u!50 &36077695802878334
 Rigidbody2D:
   serializedVersion: 5
