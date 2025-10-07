@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5478135496998406266, guid: 5929399b7a8bc354281205e1b967e9b9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.49999988, b: 0.49999988, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,11 +99,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8594138099029883525}
-  - component: {fileID: -5923947356806261692}
+  - component: {fileID: -4329275662674120879}
   - component: {fileID: 36077695802878334}
   - component: {fileID: 592095344340790513}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: OrbitingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ Transform:
   - {fileID: 2215798624680149462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5923947356806261692
+--- !u!114 &-4329275662674120879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,15 +134,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6963611826616913119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36521b49c95bbf84ca2f8ceeb6a616e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 74380f91ecbc2ed40b58965177f494e1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  Health: 100
-  MaxHealth: 100
+  m_EditorClassIdentifier: Assembly-CSharp::OrbitingEnemy
+  Health: 0
+  MaxHealth: 75
   CurrentExp: 0
   LevelUpEXP: 0
   PlayerLevel: 0
-  MovementSpeed: 1
+  MovementSpeed: 0
+  orbitDistance: 2
+  orbitSpeed: 25
 --- !u!50 &36077695802878334
 Rigidbody2D:
   serializedVersion: 5

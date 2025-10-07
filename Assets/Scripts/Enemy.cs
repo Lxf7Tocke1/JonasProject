@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class Enemy : Damageable
 {
-    private Transform target;
+    protected Transform target;
 
-   // [SerializeField] Transform PlayerPosition;
     Vector3 EnemyToPlayer;
-    [SerializeField] float MovementSpeed;
+    [SerializeField] protected float MovementSpeed;
     void Start()
     {
         Health = MaxHealth;
         MovementSpeed = 1f;
-      //  PlayerPosition = FindAnyObjectByType<Player>().transform;
     }
     public void Initialized(Transform aTarget)
     {
         target = aTarget;
     }
-    public void UpdateEnemy(Vector3 target)
+    public virtual void UpdateEnemy(Vector3 target)
     {
         EnemyToPlayer = (target - transform.position).normalized * Time.deltaTime * MovementSpeed;
         transform.position += EnemyToPlayer;
