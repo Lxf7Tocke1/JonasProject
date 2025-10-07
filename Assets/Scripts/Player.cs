@@ -18,6 +18,9 @@ public class Player : Damageable
     [SerializeField] private float Experience = 0f;
     [SerializeField] private float MaxExperience = 100;
 
+    [SerializeField] GameObject autoProjectilePrefab;
+
+    private float autoShootTimer;
 
     void Start()
     {
@@ -46,6 +49,8 @@ public class Player : Damageable
 
 
         Shooting();
+
+        AutoShooting();
     }
 
     public void GainXP(float someAmount)
@@ -75,6 +80,21 @@ public class Player : Damageable
             DeadFish.GetComponent<FishThrow>().Initialize(direction, 4);
 
 
+        }
+    }
+
+    private void AutoShooting()
+    {
+        autoShootTimer += Time.deltaTime;
+        if (autoShootTimer >= 1f)
+        {
+           Vector3[] directions = { Vector3.up, Vector3.down, Vector3.left, Vector3.right };
+            foreach (Vector3 dir in directions)
+            {
+                GameObject projectile = Instantiate(autoProjectilePrefab, transform.position, Quaternion.identity);
+                projectile.GetComponent<AutoProjectile>().Initialize(dir, 5f);
+                autoShootTimer = 0f;
+            }
         }
     }
     public override void Death()

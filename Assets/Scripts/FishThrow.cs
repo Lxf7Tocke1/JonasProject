@@ -18,7 +18,7 @@ public class FishThrow : MonoBehaviour
             enemy.TakingDamage(50.0f);
         }
     }
-            void Update()
+    void Update()
     {
         transform.position += velocity * Time.deltaTime;
     }

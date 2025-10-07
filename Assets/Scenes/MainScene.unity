@@ -10420,6 +10420,7 @@ MonoBehaviour:
   DeadFish_Prefab: {fileID: 7170599243071987582, guid: 8f1c30e57e878c547bcd3d60f22b3568, type: 3}
   Experience: 0
   MaxExperience: 100
+  autoProjectilePrefab: {fileID: 0}
 --- !u!81 &1315004030189551279
 AudioListener:
   m_ObjectHideFlags: 0
