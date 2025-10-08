@@ -11,6 +11,5 @@ public class UpgradeState : State
     public override void ExitState()
     {
         base.ExitState();
-        upgradeManager.HideUpgradeMenu();
     }
 }
