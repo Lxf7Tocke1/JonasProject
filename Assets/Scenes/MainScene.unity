@@ -768,7 +768,7 @@ MonoBehaviour:
   musicSource: {fileID: 880762451}
   SFXSource: {fileID: 1918143211}
   MenuSong: {fileID: 8300000, guid: c41b5f724ead48547979299d27a93809, type: 3}
-  PlayingSong: {fileID: 8300000, guid: b2924f7e09628bd4f8fb9b764fd0b526, type: 3}
+  PlayingSong: {fileID: 8300000, guid: 1a858b077a513a14aa8f029bd2b86cf9, type: 3}
   Levelup: {fileID: 0}
   PlayerDies: {fileID: 0}
   PlayerManualShoot: {fileID: 0}
