@@ -20,11 +20,10 @@ public class Player : Damageable
 
     [SerializeField] GameObject autoProjectilePrefab;
 
-    [SerializeField] private float levelUpEnemyKillRequirement = 10;
     [SerializeField] private float levelUpRequirementMultiplier = 1.1f;
 
+    [SerializeField] public float PreviousLevel;
     private float autoShootTimer;
-    private int enemiesKilled = 0;
 
     public float deadFishDamage = 50.0f;
     public float autoProjectileFireRate = 1f;
@@ -34,6 +33,7 @@ public class Player : Damageable
     {
         Health = MaxHealth;
         CurrentExp = 0;
+        PreviousLevel = 1;
         PlayerLevel = 1;
         LevelUpEXP = 10;
     }
@@ -51,28 +51,13 @@ public class Player : Damageable
         healthText.text = Health.ToString() + " / " + MaxHealth.ToString();
         healthBar.fillAmount = Health / MaxHealth;
 
-        EXPText.text = Experience.ToString() + " / " + MaxExperience.ToString();
-        EXPBar.fillAmount = Experience / MaxExperience;
+        EXPText.text = CurrentExp.ToString() + " / " + LevelUpEXP.ToString();
+        EXPBar.fillAmount = CurrentExp / LevelUpEXP;
 
 
         Shooting();
 
         AutoShooting();
-    }
-    public void AddKill()
-    {
-        enemiesKilled++;
-        if (enemiesKilled >= levelUpEnemyKillRequirement)
-        {
-            PlayerLevelUp();
-        }
-    }
-    public void PlayerLevelUp()
-    {
-        PlayerLevel++;
-        levelUpEnemyKillRequirement *= levelUpRequirementMultiplier;
-        enemiesKilled = 0;
-        GamesManager.Instance.SwitchState<UpgradeState>();
     }
     private void Shooting()
     {
@@ -121,5 +106,9 @@ public class Player : Damageable
     public void UpgradeAutoProjectileFireRate()
     {
         autoProjectileFireRate *= 0.8f;
+    }
+    public void AddExperience()
+    {
+
     }
 }

@@ -23,7 +23,7 @@ public class Enemy : Damageable
     }
     public override void Death()
     {
-        FindAnyObjectByType<Player>().AddKill();
+   //     FindAnyObjectByType<Player>().AddExperience(2);
         gameObject.SetActive(false);
     }
 }

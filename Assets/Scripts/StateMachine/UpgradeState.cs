@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class UpgradeState : State
 {
-    [SerializeField] private UpgradeManager upgradeManager;
-    public override void EnterState()
+    [SerializeField] GameObject UpgradeMenu;
+
+    [SerializeField] GameObject LeftButton;
+    [SerializeField] GameObject MiddleButton;
+    [SerializeField] GameObject RightButton;
+
+
+    public override void UpdateState()
     {
-        base.EnterState();
-        upgradeManager.ShowUpgradeMenu();
+        base.UpdateState();
+        UpgradeMenu.SetActive(true);
+
+
+        
     }
-    public override void ExitState()
+    public void OnBackButton()
     {
-        base.ExitState();
+        GamesManager.Instance.SwitchState<PlayingState>();
     }
 }
