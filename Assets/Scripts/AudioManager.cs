@@ -12,6 +12,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip PlayerManualShoot;
     public AudioClip PlayerAutoShoot;
 
+    public static AudioManager Audio;
+
+    private void Awake()
+    {
+        Audio = this;
+    }
     private void Start()
     {
         musicSource.clip = MenuSong;
@@ -21,4 +27,5 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
+    
 }
