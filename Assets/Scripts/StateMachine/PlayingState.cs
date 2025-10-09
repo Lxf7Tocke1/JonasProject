@@ -6,13 +6,16 @@ public class PlayingState : State
     [SerializeField] private EnemySpawner enemyspawner;
 
     [SerializeField] GameObject UpgradeMenu;
-
+    [SerializeField] GameObject PauseState;
+    [SerializeField] GameObject GameOverState;
   
     public override void UpdateState()
     {
         base.UpdateState();
 
         UpgradeMenu.SetActive(false);
+        PauseState.SetActive(false);
+        GameOverState.SetActive(false);
         player?.UpdatePlayer();
         enemyspawner?.UpdateEnemySpawner();
 
@@ -24,7 +27,6 @@ public class PlayingState : State
         {
             player.PreviousLevel = player.PlayerLevel;
             GamesManager.Instance.SwitchState<UpgradeState>();
-
         }
     }
 }

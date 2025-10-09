@@ -106,6 +106,6 @@ public class Player : Damageable
     }
     public override void Death()
     {
-        SceneManager.LoadScene("MainScene");
+        GamesManager.Instance.SwitchState<GameOverState>();
     }
 }
