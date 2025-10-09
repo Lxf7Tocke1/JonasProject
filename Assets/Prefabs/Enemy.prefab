@@ -137,11 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36521b49c95bbf84ca2f8ceeb6a616e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  Health: 100
+  Health: 1
   MaxHealth: 100
   Experience: 0
-  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
   MovementSpeed: 1
+  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
 --- !u!50 &36077695802878334
 Rigidbody2D:
   serializedVersion: 5

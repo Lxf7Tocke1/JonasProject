@@ -21,7 +21,7 @@ public class Player : Damageable
 
     [SerializeField] private float CurrentExp;
     [SerializeField] private int LevelUpEXP;
-    [SerializeField] public float PlayerLevel;
+    [SerializeField] public static float PlayerLevel;
     [SerializeField] public float PreviousLevel;
     [SerializeField] private float levelUpRequirementMultiplier = 1.1f;
 
@@ -32,6 +32,7 @@ public class Player : Damageable
 
     void Start()
     {
+        MaxHealth = 10;
         Health = MaxHealth;
         CurrentExp = 0;
         PreviousLevel = 1;

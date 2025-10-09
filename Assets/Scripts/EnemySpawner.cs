@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] Transform enemy_Target;
     [SerializeField] float enemy_SpawnRadius;
-    [SerializeField] float enemy_SpawnRate = 3f;
+    [SerializeField] float enemy_SpawnRate;
     [SerializeField] List<GameObject> enemy_Prefabs = new();
 
     List<Enemy> spawnedEnemies = new();
@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void UpdateEnemySpawner()
     {
+        enemy_SpawnRate = Player.PlayerLevel + 1;
+        
         for (int i = 0; i < spawnedEnemies.Count; i++)
         {
             spawnedEnemies[i].UpdateEnemy(enemy_Target.position);
@@ -28,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         }
         current_EnemySpawn += enemy_SpawnRate * Time.deltaTime;
 
-        if (current_EnemySpawn >= 1 && spawnedEnemies.Count < 50)
+        if (current_EnemySpawn >= 1 && spawnedEnemies.Count < 50 * Player.PlayerLevel)
         {
             SpawnEnemy();
             current_EnemySpawn = 0;

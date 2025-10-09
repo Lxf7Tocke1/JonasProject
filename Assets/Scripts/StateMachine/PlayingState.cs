@@ -23,9 +23,9 @@ public class PlayingState : State
         {
             GamesManager.Instance.SwitchState<PauseState>();
         }
-        if (player.PlayerLevel > player.PreviousLevel)
+        if (Player.PlayerLevel > player.PreviousLevel)
         {
-            player.PreviousLevel = player.PlayerLevel;
+            player.PreviousLevel = Player.PlayerLevel;
             GamesManager.Instance.SwitchState<UpgradeState>();
         }
     }

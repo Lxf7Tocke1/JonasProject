@@ -726,7 +726,6 @@ MonoBehaviour:
   enemy_Prefabs:
   - {fileID: 6963611826616913119, guid: 67a7b31e9b8ef7a498cd549cccbeefe6, type: 3}
   - {fileID: 6963611826616913119, guid: 96c596ae60adb4c499b7a6dcf4e967f0, type: 3}
-  player: {fileID: 1296671132559992087}
 --- !u!4 &737827321
 Transform:
   m_ObjectHideFlags: 0
@@ -13003,6 +13002,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1592661410}
+    - target: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
+      propertyPath: PlayerLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
       propertyPath: damageFishThrow
       value: 5

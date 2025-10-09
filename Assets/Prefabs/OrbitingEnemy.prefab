@@ -138,11 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74380f91ecbc2ed40b58965177f494e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitingEnemy
-  Health: 0
+  Health: 1
   MaxHealth: 200
   Experience: 0
-  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
   MovementSpeed: 0
+  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
   orbitDistance: 2
   orbitSpeed: 25
 --- !u!50 &36077695802878334

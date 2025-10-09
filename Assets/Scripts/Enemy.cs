@@ -9,8 +9,10 @@ public class Enemy : Damageable
 
     void Start()
     {
-        Health = MaxHealth;
         MovementSpeed = 1f;
+        if (Player.PlayerLevel > 1)
+            Health = MaxHealth * Player.PlayerLevel;
+        else Health = MaxHealth;
     }
     public void Initialized(Transform aTarget)
     {
