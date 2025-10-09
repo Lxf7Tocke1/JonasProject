@@ -9,12 +9,11 @@ public class UpgradeState : State
     [SerializeField] GameObject RightButton;
 
     [SerializeField] private Player player;
-    [SerializeField] private PlayerMovement playerMovement;
-
+    [SerializeField] private AutoProjectile autoProjectile;
 
     private float increaseFishThrowDamage = 5f;
-    private float increasePlayerMovementSpeed = 1.2f;
-
+    private float increasePlayerMovementSpeed = 0.2f;
+    private float increaseAutoProjectileDamage = 3f;
     public override void UpdateState()
     {
         base.UpdateState();
@@ -25,10 +24,13 @@ public class UpgradeState : State
     {
         player.damageFishThrow += increaseFishThrowDamage;
     }
-
+    public void UpgradeAutoShoot()
+    {
+        autoProjectile.damage = autoProjectile.damage + increaseAutoProjectileDamage;
+    }
     public void UpgradePlayerSpeed()
     {
-        playerMovement.PlayerSpeed *= increasePlayerMovementSpeed;
+        player.PlayerSpeed += increasePlayerMovementSpeed;
     }
 
     public void OnBackButton()

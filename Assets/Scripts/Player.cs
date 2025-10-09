@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player : Damageable
 {
-    [SerializeField] float PlayerSpeed;
+    [SerializeField] public float PlayerSpeed;
     Vector3 movement;
 
     [SerializeField] Image healthBar;

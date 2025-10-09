@@ -5,7 +5,7 @@ public class AutoProjectile : MonoBehaviour
 {
     Vector3 velocity;
     [SerializeField] float lifeTime = 1f;
-    private float damage = 25.0f;
+    public float damage = 25.0f;
     public void Initialize(Vector3 direction, float speed)
     {
         Destroy(gameObject, lifeTime);
