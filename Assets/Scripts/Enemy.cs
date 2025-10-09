@@ -3,11 +3,10 @@ using UnityEngine;
 public class Enemy : Damageable
 {
     protected Transform target;
-
-
-
+    
     Vector3 EnemyToPlayer;
     [SerializeField] protected float MovementSpeed;
+
     void Start()
     {
         Health = MaxHealth;

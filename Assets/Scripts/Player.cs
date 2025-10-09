@@ -107,6 +107,5 @@ public class Player : Damageable
     public override void Death()
     {
         GamesManager.Instance.SwitchState<GameOverState>();
-        AudioManager.Audio.AddComponent
     }
 }

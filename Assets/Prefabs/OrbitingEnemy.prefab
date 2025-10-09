@@ -139,8 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitingEnemy
   Health: 0
-  MaxHealth: 75
+  MaxHealth: 200
   Experience: 0
+  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
   MovementSpeed: 0
   orbitDistance: 2
   orbitSpeed: 25
