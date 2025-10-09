@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deadfish +2.5dmg
+  m_text: Deadfish +5 dmg
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 848962420}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: AudioManager
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,8 +770,8 @@ MonoBehaviour:
   MenuSong: {fileID: 8300000, guid: c41b5f724ead48547979299d27a93809, type: 3}
   PlayingSong: {fileID: 8300000, guid: 1a858b077a513a14aa8f029bd2b86cf9, type: 3}
   Levelup: {fileID: 0}
-  PlayerDies: {fileID: 0}
-  PlayerManualShoot: {fileID: 0}
+  PlayerDies: {fileID: 8300000, guid: 23cf5e10d1aad7d439bb4f03d29a2124, type: 3}
+  PlayerManualShoot: {fileID: 8300000, guid: f0de7e2ae9a5c034892368e1a9ccfafb, type: 3}
   PlayerAutoShoot: {fileID: 0}
 --- !u!4 &848962421
 Transform:
@@ -10136,6 +10136,8 @@ MonoBehaviour:
   LeftButton: {fileID: 1398833849}
   MiddleButton: {fileID: 1154802115}
   RightButton: {fileID: 1643357696}
+  player: {fileID: 1296671132559992087}
+  playerMovement: {fileID: 0}
 --- !u!4 &922168137
 Transform:
   m_ObjectHideFlags: 0
@@ -10914,6 +10916,18 @@ MonoBehaviour:
       - m_Target: {fileID: 922168136}
         m_TargetAssemblyTypeName: UpgradeState, Assembly-CSharp
         m_MethodName: OnBackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 922168136}
+        m_TargetAssemblyTypeName: UpgradeState, Assembly-CSharp
+        m_MethodName: UpgradeFishThrow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11824,6 +11838,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1592661410}
+    - target: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
+      propertyPath: damageFishThrow
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

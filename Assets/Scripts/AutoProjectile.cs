@@ -5,7 +5,7 @@ public class AutoProjectile : MonoBehaviour
 {
     Vector3 velocity;
     [SerializeField] float lifeTime = 1f;
-
+    private float damage = 25.0f;
     public void Initialize(Vector3 direction, float speed)
     {
         Destroy(gameObject, lifeTime);
@@ -18,7 +18,7 @@ public class AutoProjectile : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy.TakingDamage(25.0f);
+            enemy.TakingDamage(damage);
             Destroy(gameObject);
         }
     }

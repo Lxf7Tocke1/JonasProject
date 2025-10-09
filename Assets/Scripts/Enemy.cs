@@ -4,6 +4,8 @@ public class Enemy : Damageable
 {
     protected Transform target;
 
+
+
     Vector3 EnemyToPlayer;
     [SerializeField] protected float MovementSpeed;
     void Start()
@@ -23,7 +25,7 @@ public class Enemy : Damageable
     }
     public override void Death()
     {
-   //     FindAnyObjectByType<Player>().AddExperience(2);
+        FindAnyObjectByType<Player>().AddExperience(2);
         gameObject.SetActive(false);
     }
 }

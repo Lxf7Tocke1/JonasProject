@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,18 +16,18 @@ public class Player : Damageable
     [SerializeField] TextMeshProUGUI EXPText;
 
     [SerializeField] GameObject DeadFish_Prefab;
-    [SerializeField] private float Experience = 0f;
-    [SerializeField] private float MaxExperience = 100;
+    [SerializeField] public float damageFishThrow;
 
-    [SerializeField] GameObject autoProjectilePrefab;
 
+    [SerializeField] private float CurrentExp;
+    [SerializeField] private int LevelUpEXP;
+    [SerializeField] public float PlayerLevel;
+    [SerializeField] public float PreviousLevel;
     [SerializeField] private float levelUpRequirementMultiplier = 1.1f;
 
-    [SerializeField] public float PreviousLevel;
-    private float autoShootTimer;
-
-    public float deadFishDamage = 50.0f;
-    public float autoProjectileFireRate = 1f;
+    [SerializeField] GameObject autoProjectilePrefab;
+    [SerializeField] private float autoProjectileSpeed;
+    [SerializeField] private float autoShootTimer;
 
 
     void Start()
@@ -36,8 +37,23 @@ public class Player : Damageable
         PreviousLevel = 1;
         PlayerLevel = 1;
         LevelUpEXP = 10;
+        damageFishThrow = 10f;
+        autoProjectileSpeed = 5f;
     }
-
+    public void AddExperience(float Experience)
+    {
+        CurrentExp = CurrentExp + Experience;
+    }
+    private void LevelUp()
+    {
+        if (CurrentExp >= LevelUpEXP)
+        {
+            PlayerLevel += 1;
+            CurrentExp = 0;
+            LevelUpEXP = Mathf.RoundToInt(LevelUpEXP * levelUpRequirementMultiplier);
+        }
+    }
+    
     public void UpdatePlayer()
     {
 
@@ -56,7 +72,7 @@ public class Player : Damageable
 
 
         Shooting();
-
+        LevelUp();
         AutoShooting();
     }
     private void Shooting()
@@ -68,7 +84,7 @@ public class Player : Damageable
             mousePosition.z = 0;
             Vector3 direction = (mousePosition - transform.position).normalized;
 
-            DeadFish.GetComponent<FishThrow>().Initialize(direction, 4, 25f);
+            DeadFish.GetComponent<FishThrow>().Initialize(direction, 4, damageFishThrow);
 
 
         }
@@ -83,7 +99,7 @@ public class Player : Damageable
             foreach (Vector3 dir in directions)
             {
                 GameObject projectile = Instantiate(autoProjectilePrefab, transform.position, Quaternion.identity);
-                projectile.GetComponent<AutoProjectile>().Initialize(dir, 5f);
+                projectile.GetComponent<AutoProjectile>().Initialize(dir, autoProjectileSpeed);
                 autoShootTimer = 0f;
             }
         }
@@ -91,24 +107,5 @@ public class Player : Damageable
     public override void Death()
     {
         SceneManager.LoadScene("MainScene");
-    }
-
-    public void UpgradePlayerSpeed()
-    {
-        PlayerSpeed *= 1.2f;
-    }
-
-    public void UpgradeDeadFishDamage()
-    {
-        deadFishDamage *= 1.25f;
-    }
-
-    public void UpgradeAutoProjectileFireRate()
-    {
-        autoProjectileFireRate *= 0.8f;
-    }
-    public void AddExperience()
-    {
-
     }
 }

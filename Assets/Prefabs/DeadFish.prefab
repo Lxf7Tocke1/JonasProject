@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3992c0c0285dad047a229a497bd47ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishThrow
+  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
 --- !u!1 &7572660799363043172
 GameObject:
   m_ObjectHideFlags: 0

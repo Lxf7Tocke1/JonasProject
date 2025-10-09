@@ -5,9 +5,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] protected float Health;
     [SerializeField] protected float MaxHealth;
 
-    public float CurrentExp;
-    public float LevelUpEXP;
-    public float PlayerLevel;
+    [SerializeField] public float Experience;
     public bool Alive => Health > 0;
     // [SerializeField] protected Player player;
     
