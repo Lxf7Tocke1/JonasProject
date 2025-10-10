@@ -8,6 +8,7 @@ public class Enemy : Damageable
     Vector3 EnemyToPlayer;
     [SerializeField] protected float MovementSpeed;
 
+    [SerializeField] GameObject Particle;
 
     void Start()
     {
@@ -30,6 +31,12 @@ public class Enemy : Damageable
     {
         SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
         FindAnyObjectByType<Player>().AddExperience(2);
+        Particle.SetActive(true);
+        Particle.transform.position = transform.position;
+        if (deathSoundClip = null)
+        {
+            Particle.SetActive(false);
+        }
         gameObject.SetActive(false);
     }
 }

@@ -144,6 +144,7 @@ MonoBehaviour:
   takingDamageClip: {fileID: 8300000, guid: f6c43526b9c4be04fb5182e16735da57, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 27cc2dd5c96d9fa4c9f5282e78da0262, type: 3}
   MovementSpeed: 0
+  Particle: {fileID: 491029747594824105, guid: 82e8342fdd569d8419d6d832f1ef4d6e, type: 3}
   orbitDistance: 2
   orbitSpeed: 25
 --- !u!50 &36077695802878334

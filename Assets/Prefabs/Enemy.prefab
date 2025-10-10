@@ -143,6 +143,7 @@ MonoBehaviour:
   takingDamageClip: {fileID: 8300000, guid: f6c43526b9c4be04fb5182e16735da57, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 734eb04ffe5a4454a937bfa8fb214012, type: 3}
   MovementSpeed: 1
+  Particle: {fileID: 491029747594824105, guid: 82e8342fdd569d8419d6d832f1ef4d6e, type: 3}
 --- !u!50 &36077695802878334
 Rigidbody2D:
   serializedVersion: 5
