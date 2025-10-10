@@ -140,6 +140,7 @@ MonoBehaviour:
   Health: 1
   MaxHealth: 100
   Experience: 0
+  takingDamageClip: {fileID: 8300000, guid: f6c43526b9c4be04fb5182e16735da57, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 734eb04ffe5a4454a937bfa8fb214012, type: 3}
   MovementSpeed: 1
 --- !u!50 &36077695802878334
