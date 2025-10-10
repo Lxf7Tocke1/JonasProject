@@ -9,16 +9,16 @@ public class GameOverState : State
     public override void UpdateState()
     {
         base.UpdateState();
-        gameOverState.SetActive(false);
+        gameOverState.SetActive(true);
 
 
     }
     public void OnPlayButton()
     {
-        GamesManager.Instance.SwitchState<PlayingState>();
+        SceneManager.LoadScene("MainScene");
     }
     public void MainMenuButton()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainMenu");
     }
 }
