@@ -6,15 +6,17 @@ public class Damageable : MonoBehaviour
     [SerializeField] protected float MaxHealth;
 
     [SerializeField] public float Experience;
+    [SerializeField] protected AudioClip takingDamageClip;
+
     public bool Alive => Health > 0;
-    // [SerializeField] protected Player player;
     
     void Start()
     {
-       // player = FindAnyObjectByType<Player>();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundFXManager.instance.PlaySoundFXClip(takingDamageClip, transform, 1f);
         TakingDamage();
     }
 

@@ -1,46 +1,45 @@
-//using UnityEngine;
-//
-//public class SaveData : MonoBehaviour
-//{
-//    public struct SaveData
-//    {
-//        public int Highscore;
-//    }
-//
-//    void Start()
-//    {
-//        
-//    }
-//    public class SaveManager : MonoBehaviour
-//    {
-//        [SerializeField] private SaveData data;
-//        [SerializeField] string fileName;
-//        
-//        public int GetHighscore => data.Highscore;
-//        string GetPath()
-//        {
-//            return Application.persistentDataPath + "/" + fileName + ".json"
-//        }
-//            private void LoadData()
-//        {
-//            if (!fileName.Exists(GetPath()))
-//            {
-//                SaveGameFile();
-//                return;
-//            }
-//        }
-//        private void SaveGameFile()
-//        {
-//            string jsonfile = JsonUtility.ToJson(data, true);
-//            fileName.WriteAllText(GetPath(), jsonfile);
-//        }
-//        public void SetHighscore(int someScore)
-//        {
-//            if (data.Highscore > someScore) return;
-//
-//            data.Highscore = someScore;
-//            SaveGameFile();
-//        }
-//    }
-//}
-//
+using unityengine;
+
+public class savedata : Monobehaviour
+{
+    public struct savedata
+    {
+        public int highscore;
+    }
+
+    void start()
+    {
+
+    }
+    public class savemanager : monobehaviour
+    {
+        [serializefield] private savedata data;
+        [serializefield] string filename;
+
+        public int gethighscore => data.highscore;
+        string getpath()
+        {
+            return application.persistentdatapath + "/" + filename + ".json"
+        }
+        private void loaddata()
+        {
+            if (!filename.exists(getpath()))
+            {
+                savegamefile();
+                return;
+            }
+        }
+        private void savegamefile()
+        {
+            string jsonfile = jsonutility.tojson(data, true);
+            filename.writealltext(getpath(), jsonfile);
+        }
+        public void sethighscore(int somescore)
+        {
+            if (data.highscore > somescore) return;
+
+            data.highscore = somescore;
+            savegamefile();
+        }
+    }
+}

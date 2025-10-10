@@ -140,8 +140,8 @@ MonoBehaviour:
   Health: 1
   MaxHealth: 100
   Experience: 0
+  deathSoundClip: {fileID: 8300000, guid: 734eb04ffe5a4454a937bfa8fb214012, type: 3}
   MovementSpeed: 1
-  player: {fileID: 8597858724005251423, guid: 0be5ad1f94675f447aa53b7e5398030a, type: 3}
 --- !u!50 &36077695802878334
 Rigidbody2D:
   serializedVersion: 5

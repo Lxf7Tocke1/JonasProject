@@ -29,7 +29,9 @@ public class Player : Damageable
     [SerializeField] private float autoProjectileSpeed;
     [SerializeField] private float autoShootTimer;
 
-
+    [SerializeField] private AudioClip levelupClip;
+    [SerializeField] private AudioClip playerDeathClip;
+    [SerializeField] private AudioClip shootClip;
     void Start()
     {
         MaxHealth = 10;
@@ -50,6 +52,7 @@ public class Player : Damageable
         if (CurrentExp >= LevelUpEXP)
         {
             PlayerLevel += 1;
+            SoundFXManager.instance.PlaySoundFXClip(levelupClip, transform, 1f);
             CurrentExp = 0;
             LevelUpEXP = Mathf.RoundToInt(LevelUpEXP * levelUpRequirementMultiplier);
         }
@@ -80,6 +83,7 @@ public class Player : Damageable
     {
         if (Input.GetMouseButtonDown(0))
         {
+            SoundFXManager.instance.PlaySoundFXClip(shootClip, transform, 1f);
             GameObject DeadFish = Instantiate(DeadFish_Prefab, transform.position, Quaternion.identity);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
@@ -107,6 +111,7 @@ public class Player : Damageable
     }
     public override void Death()
     {
+        SoundFXManager.instance.PlaySoundFXClip(playerDeathClip, transform, 1f);
         GamesManager.Instance.SwitchState<GameOverState>();
     }
 }

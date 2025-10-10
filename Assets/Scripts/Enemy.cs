@@ -3,9 +3,11 @@ using UnityEngine;
 public class Enemy : Damageable
 {
     protected Transform target;
+    [SerializeField] private AudioClip deathSoundClip;
     
     Vector3 EnemyToPlayer;
     [SerializeField] protected float MovementSpeed;
+
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class Enemy : Damageable
     }
     public override void Death()
     {
+        SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
         FindAnyObjectByType<Player>().AddExperience(2);
         gameObject.SetActive(false);
     }
