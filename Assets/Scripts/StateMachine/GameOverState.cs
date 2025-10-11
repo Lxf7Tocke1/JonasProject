@@ -29,7 +29,7 @@ public class GameOverState : State
         int SavedHighscore = PlayerPrefs.GetInt("HighScore", 0);
         if (player.PlayerLevelMainMenu >  SavedHighscore)
         {
-            PlayerPrefs.SetInt("HighScore", SavedHighscore);
+            PlayerPrefs.SetInt("HighScore", player.PlayerLevelMainMenu);
         }
     }
 
