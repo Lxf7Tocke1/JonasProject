@@ -29,14 +29,9 @@ public class Enemy : Damageable
     }
     public override void Death()
     {
+        Instantiate(Particle, transform.position, Quaternion.identity);
         SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
         FindAnyObjectByType<Player>().AddExperience(2);
-        Particle.SetActive(true);
-        Particle.transform.position = transform.position;
-        if (deathSoundClip = null)
-        {
-            Particle.SetActive(false);
-        }
         gameObject.SetActive(false);
     }
 }

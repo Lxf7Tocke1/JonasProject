@@ -1,8 +1,11 @@
 
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuState : State
 {
+
     public override void EnterState()
     {
         base.EnterState();

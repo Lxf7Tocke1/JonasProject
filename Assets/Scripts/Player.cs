@@ -22,6 +22,7 @@ public class Player : Damageable
     [SerializeField] private float CurrentExp;
     [SerializeField] private int LevelUpEXP;
     [SerializeField] public static float PlayerLevel;
+    public float PlayerLevelMainMenu;
     [SerializeField] public float PreviousLevel;
     [SerializeField] private float levelUpRequirementMultiplier = 1.1f;
 
@@ -32,6 +33,7 @@ public class Player : Damageable
     [SerializeField] private AudioClip levelupClip;
     [SerializeField] private AudioClip playerDeathClip;
     [SerializeField] private AudioClip shootClip;
+
     void Start()
     {
         MaxHealth = 10;
@@ -111,6 +113,7 @@ public class Player : Damageable
     }
     public override void Death()
     {
+        PlayerLevelMainMenu = PlayerLevel;
         SoundFXManager.instance.PlaySoundFXClip(playerDeathClip, transform, 1f);
         GamesManager.Instance.SwitchState<GameOverState>();
     }
