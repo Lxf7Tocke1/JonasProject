@@ -279,9 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48141855}
   - component: {fileID: 48141854}
-  - component: {fileID: 48141853}
   - component: {fileID: 48141852}
-  - component: {fileID: 48141851}
   - component: {fileID: 48141856}
   m_Layer: 5
   m_Name: Canvas
@@ -290,18 +288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &48141851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48141850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a45607be1d94f474dbc64622b121ec94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!114 &48141852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,29 +305,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &48141853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48141850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!223 &48141854
 Canvas:
   m_ObjectHideFlags: 0
@@ -406,6 +369,7 @@ MonoBehaviour:
   - {fileID: 1426365341}
   - {fileID: 1238147824}
   CurrentState: {fileID: 0}
+  highScoreText: {fileID: 326426675}
   mainMenuMusicClip: {fileID: 8300000, guid: 1a858b077a513a14aa8f029bd2b86cf9, type: 3}
 --- !u!1 &52045827
 GameObject:
